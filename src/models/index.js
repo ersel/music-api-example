@@ -1,4 +1,4 @@
-const Sequelize = require('sequelize');
+const Sequelize = require('sequelize'); // our ORM library = sequilize
 const ArtistModel = require('./artist');
 const { DB_NAME, DB_USER, DB_PASSWORD, DB_HOST, DB_PORT } = process.env;
 
@@ -14,8 +14,9 @@ const setupDatabase = () => {
     const Artist = ArtistModel(connection, Sequelize);
 
     connection.sync({ alter: true });
-    return{
-        Artist
+
+    return {
+      Artist
     };
 };
 
