@@ -2,8 +2,8 @@ const { Artist } = require("../../models");
 
 const createArtist = (req, res) => {
   Artist.create(req.body)
-    .then((sonuc /* instance of a Model, a row of data */) => {
-      res.status(201).send(sonuc);
+    .then((databaseYaratilanRecord /* instance of a Model, a row of data */) => {
+      res.status(201).send(databaseYaratilanRecord);
     })
     .catch((error) => {
       console.log({ error });
@@ -29,7 +29,7 @@ const getAllArtists = (req, res) => {
   if (genreToSearch) {
     filter = { where: { genre: genreToSearch } };
   }
-  Artist.findOne(filter).then((records) => {
+  Artist.findAll(filter).then((records) => {
     res.status(200).send(records);
   });
 };

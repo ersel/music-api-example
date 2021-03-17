@@ -4,9 +4,9 @@ const app = express();
 
 app.use(express.json());
 
-app.post("/artists", createArtist);
 app.get("/artists", getAllArtists);
 app.get("/artists/:artistId", getArtistById);
+app.post("/artists", createArtist);
 app.delete("/artists/:artistId", deleteArtistById);
 
 module.exports = app;
